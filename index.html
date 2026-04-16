@@ -1,63 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>System</title>
-  <style>
-    body {
-      background: black;
-      color: lime;
-      font-family: monospace;
-      padding: 20px;
-    }
+<meta charset="UTF-8">
+<title>System Check</title>
 
-    button {
-      background: lime;
-      color: black;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      margin-top: 10px;
-      font-weight: bold;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f5f9ff;
+  text-align: center;
+}
 
-    #box {
-      margin-top: 20px;
-      white-space: pre-line;
-    }
-  </style>
+.container {
+  margin-top: 120px;
+}
+
+h1 {
+  color: #0b5ed7;
+  font-size: 34px;
+}
+
+#text {
+  font-size: 24px;
+  color: #333;
+  margin-top: 25px;
+  min-height: 50px;
+}
+
+.page2 {
+  display: none;
+  margin-top: 150px;
+  font-size: 40px;
+  color: #0b5ed7;
+  font-weight: bold;
+}
+</style>
 </head>
+
 <body>
 
-<h3>System Panel</h3>
+<div class="container" id="page1">
+  <h1>System Check</h1>
+  <div id="text">جاري البدء...</div>
+</div>
 
-<div>اضغط الزر للمتابعة...</div>
-
-<button onclick="next()">NEXT</button>
-
-<div id="box"></div>
+<div class="page2" id="page2">
+  جمعه مباركه🫂🤍
+</div>
 
 <script>
 let messages = [
-"Connecting to server...",
-"Access granted...",
-"Scanning device...",
-"Downloading data...",
-"Contacts found...",
-"Photos accessed...",
-"Almost done...",
-"😌 Just kidding... it's a prank"
+"Checking system...",
+"Connecting securely...",
+"Loading data...",
+"Verifying access...",
+"Finalizing...",
+"Done 😌"
 ];
 
 let i = 0;
 
-function next() {
+function run() {
   if (i < messages.length) {
-    document.getElementById("box").innerText += messages[i] + "\n";
+    document.getElementById("text").innerText = messages[i];
     i++;
+    setTimeout(run, 1200);
+  } else {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
   }
 }
+
+run();
 </script>
 
 </body>
-</htm
+</html>
