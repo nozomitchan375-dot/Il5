@@ -2,14 +2,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>System Check</title>
+<title>System Access</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
-  font-family: Arial;
-  background: #f5f9ff;
+  font-family: monospace;
+  background: #0b1220;
+  color: #d6e2ff;
   text-align: center;
+  overflow: hidden;
 }
 
 .container {
@@ -17,23 +21,32 @@ body {
 }
 
 h1 {
-  color: #0b5ed7;
+  color: #4da3ff;
   font-size: 34px;
+  letter-spacing: 2px;
 }
 
 #text {
-  font-size: 24px;
-  color: #333;
+  font-size: 22px;
   margin-top: 25px;
-  min-height: 50px;
+  min-height: 60px;
+  color: #cfe3ff;
+}
+
+.warning {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-top: 10px;
+  opacity: 0.8;
 }
 
 .page2 {
   display: none;
-  margin-top: 150px;
-  font-size: 40px;
-  color: #0b5ed7;
-  font-weight: bold;
+  margin-top: 180px;
+  font-size: 54px;
+  font-family: 'Amiri', serif;
+  color: #4da3ff;
+  font-weight: 700;
 }
 </style>
 </head>
@@ -41,22 +54,26 @@ h1 {
 <body>
 
 <div class="container" id="page1">
-  <h1>System Check</h1>
-  <div id="text">جاري البدء...</div>
+  <h1>SECURE SYSTEM</h1>
+  <div class="warning">⚠ Unauthorized access detected...</div>
+  <div id="text">Initializing...</div>
 </div>
 
 <div class="page2" id="page2">
-  جمعه مباركه🫂🤍
+  جمعه مباركه🫂🤍<br>
+  <div style="font-size:20px; margin-top:10px;">😌 just a prank</div>
 </div>
 
 <script>
 let messages = [
-"Checking system...",
-"Connecting securely...",
-"Loading data...",
-"Verifying access...",
-"Finalizing...",
-"Done 😌"
+"Connecting to device...",
+"Bypassing security...",
+"Accessing system files...",
+"Scanning personal data...",
+"Warning: unusual activity detected",
+"Locking session...",
+"......",
+"Access complete"
 ];
 
 let i = 0;
@@ -65,10 +82,13 @@ function run() {
   if (i < messages.length) {
     document.getElementById("text").innerText = messages[i];
     i++;
-    setTimeout(run, 1200);
+    setTimeout(run, 1400);
   } else {
-    document.getElementById("page1").style.display = "none";
-    document.getElementById("page2").style.display = "block";
+    document.getElementById("page1").style.opacity = "0";
+    setTimeout(() => {
+      document.getElementById("page1").style.display = "none";
+      document.getElementById("page2").style.display = "block";
+    }, 800);
   }
 }
 
