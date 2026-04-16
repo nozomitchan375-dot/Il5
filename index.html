@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>System</title>
+  <style>
+    body {
+      background: black;
+      color: lime;
+      font-family: monospace;
+      padding: 20px;
+    }
+
+    button {
+      background: lime;
+      color: black;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    #box {
+      margin-top: 20px;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+
+<h3>System Panel</h3>
+
+<div>اضغط الزر للمتابعة...</div>
+
+<button onclick="next()">NEXT</button>
+
+<div id="box"></div>
+
+<script>
+let messages = [
+"Connecting to server...",
+"Access granted...",
+"Scanning device...",
+"Downloading data...",
+"Contacts found...",
+"Photos accessed...",
+"Almost done...",
+"😌 Just kidding... it's a prank"
+];
+
+let i = 0;
+
+function next() {
+  if (i < messages.length) {
+    document.getElementById("box").innerText += messages[i] + "\n";
+    i++;
+  }
+}
+</script>
+
+</body>
+</htm
